@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Monde Canin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+  <header>
+  <img src="Images/dd6823d4-6b3b-463d-9b35-f7f3df9ba9bb.jfif" alt="Logo du site" class="logo">
+</header>
+<!-- BOUTON PARAMÈTRE -->
+<div class="param-container">
+  <button id="param-button">⚙️ </button>
+    <ul id="param-menu" class="param-menu hidden">
+    <li><a href="accueil.html">🏠 Accueil</a></li>
+    <li><a href="races.html">🐶 Races</a></li>
+    <li><a href="alimentation.html">🍽️ Alimentation</a></li>
+    <li><a href="chat.html">💬 Chat</a></li>
+    <li><a href="contact.html">📞 Contact</a></li>
+    <li><a href="#" id="deconnexion-link">🚪 Déconnexion</a></li>
+  </ul>
+</div>
+
+</header>
+
+
+    <main>
+        <section class="contact">
+  <h2>Nos coordonnées</h2>
+  <p><strong>Email :</strong> sylvainmwanganga7@gmail.com</p>
+  <p><strong>Téléphone :</strong> +243 97 789 58 86</p>
+  <p><strong>Adresse :</strong> 88, Feshi, Kinshasa</p>
+  <p>Disponible du lundi au vendredi, de 9h à 17h.</p>
+
+  <h3>Nous suivre ou discuter :</h3>
+  <div class="reseaux">
+  <a href="https://wa.me/243977895886" target="_blank" class="whatsapp">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+  <a href="https://facebook.com/https://https://https://www.facebook.com/sylvain.fficiel.2025" target="_blank" class="facebook">
+    <i class="fab fa-facebook"></i> Facebook
+  </a>
+  <a href="https://instagram.com/https://www.instagram.com/sylvain_akil/#" target="_blank" class="instagram">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+</div>
+
+</section>
+    </main>
+<script>
+  const paramButton = document.getElementById("param-button");
+  const paramMenu = document.getElementById("param-menu");
+  const deconnexionLink = document.getElementById("deconnexion-link");
+
+  // Affiche ou cache le menu quand on clique sur le bouton
+  paramButton.addEventListener("click", function (e) {
+    e.stopPropagation();
+    paramMenu.classList.toggle("hidden");
+    if (paramMenu.classList.contains("hidden")) {
+      paramMenu.style.display = "none";
+    } else {
+      paramMenu.style.display = "block";
+    }
+  });
+
+  // Ferme le menu si on clique en dehors
+  window.addEventListener("click", function () {
+    paramMenu.classList.add("hidden");
+    paramMenu.style.display = "none";
+  });
+
+  // Empêche la fermeture si on clique dans le menu
+  paramMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
+
+  // Gère la déconnexion
+  deconnexionLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    sessionStorage.removeItem("connected");
+    window.location.href = "connexion.html";
+  });
+</script>
+
+    <footer>
+        <p>&copy; 2025 Monde Canin - Tous droits réservés</p>
+    </footer>
+</body>

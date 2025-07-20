@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Alimentation - Monde Canin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <img src="Images/dd6823d4-6b3b-463d-9b35-f7f3df9ba9bb.jfif" alt="Logo du site" class="logo">
+</header>
+<!-- BOUTON PARAMÈTRE -->
+<div class="param-container">
+  <button id="param-button">⚙️ </button>
+    <ul id="param-menu" class="param-menu hidden">
+    <li><a href="accueil.html">🏠 Accueil</a></li>
+    <li><a href="races.html">🐶 Races</a></li>
+    <li><a href="alimentation.html">🍽️ Alimentation</a></li>
+    <li><a href="chat.html">💬 Chat</a></li>
+    <li><a href="contact.html">📞 Contact</a></li>
+    <li><a href="#" id="deconnexion-link">🚪 Déconnexion</a></li>
+  </ul>
+</div>
+
+</header>
+
+    <main>
+        <section>
+            <h2>Un conseil alimentaire pour votre chien :</h2>
+            <button onclick="afficherConseil()">Voir un conseil 🦴</button>
+            <p id="conseil"></p>
+        </section>
+    </main>
+    <div class="contenu">
+      <section class="alimentation">
+        <h2>Exemples de repas équilibrés</h2>
+<div class="galerie-horizontale">
+  <div class="conseil">
+    <img src="Images/Le Guide Ultime pour Choisir les Meilleures Croquettes pour Votre Chat.jfif" alt="Croquettes Premium">
+    <p>Croquettes</p>
+
+    <p>Optez pour des croquettes riches en protéines et faibles en céréales.</p>
+  </div>
+
+  <div class="conseil">
+    <img src="Images/Cuisiner pour son chien _ proportions et recettes.jfif" alt="Ration ménagère">
+    <p>Ration ménagère</p>
+
+    <p>Un mélange maison (riz, légumes, viande) peut être sain si bien équilibré.</p>
+  </div>
+
+  <div class="conseil">
+    <img src="Images/Les chiens peuvent-ils manger des os _.jfif" alt="Os naturel">
+    <p>Os naturel</p>
+
+    <p>Offrez un os naturel une fois par semaine pour renforcer les dents.</p>
+  </div>
+
+  <div class="conseil">
+    <img src="Images/Pastèque _ bienfaits et vertus pour la santé.jfif" alt="Pastèque">
+    <p>Pastèque</p>
+
+    <p>La pastèque est très peu calorique et riche en eau.</p>
+  </div>
+
+  <div class="conseil">
+    <img src="Images/10 házi kozmetikum zsíros bőrre.jfif" alt="Pomme">
+    <p>Pomme</p>
+
+    <p>La pomme contient des antioxydants, vitamine C et A.</p>
+  </div>
+
+  <div class="conseil">
+    <img src="Images/Les coupes et viandes maigres _ Recettes du Québec.jfif" alt="maigres">
+    <p>Viande maigres</p>
+
+    <p>Source de protéines essentielles,
+toujours bien cuire la viande, sans sel ni épices, et éviter les os cuits qui peuvent se briser.</p>
+  </div>
+  <div class="conseil">
+    <img src="Images/Saumon à l’oseille pour 1 personnes - Recettes - Elle à Table.jfif" alt="Saumon">
+    <p>poisson Saumon</p>
+
+    <p>Riche en oméga-3, bon pour la peau et le pelage,
+toujours bien cuit et sans arêtes, éviter le poisson cru.</p>
+  </div>
+  <div class="conseil">
+    <img src="Images/20 super-aliments à toujours avoir dans vos placards.jfif" alt="myrtilles">
+    <p>myrtilles</p>
+
+    <p>Antioxydants naturels, renforcent le système immunitaire,
+excellente friandise naturelle et faible en calories.</p>
+  </div>
+  <div class="conseil">
+    <img src="Images/Œufs Cocotte au Reblochon et Lardons 🍳🧀 Vous….jfif" alt="oeufs">
+    <p>oeufs</p>
+
+    <p>Source complète de protéines et de vitamines,
+jamais crus (risque de salmonelle), à donner nature.</p>
+  </div>
+  <div class="conseil">
+    <img src="Images/Carottes rôties au miel et au thym - Elle Mijote Quelque Chose.jfif" alt="carottes">
+    <p>Carottes</p>
+    
+    <p> Faibles en calories, riches en fibres et en bêta-carotène,
+donne-les crues comme friandise ou cuites à la vapeur pour une meilleure digestion.</p>
+  </div>
+</div>
+
+
+      </section>
+    </div>
+  </main>
+<script>
+  const paramButton = document.getElementById("param-button");
+  const paramMenu = document.getElementById("param-menu");
+  const deconnexionLink = document.getElementById("deconnexion-link");
+
+  // Affiche ou cache le menu quand on clique sur le bouton
+  paramButton.addEventListener("click", function (e) {
+    e.stopPropagation();
+    paramMenu.classList.toggle("hidden");
+    if (paramMenu.classList.contains("hidden")) {
+      paramMenu.style.display = "none";
+    } else {
+      paramMenu.style.display = "block";
+    }
+  });
+
+  // Ferme le menu si on clique en dehors
+  window.addEventListener("click", function () {
+    paramMenu.classList.add("hidden");
+    paramMenu.style.display = "none";
+  });
+
+  // Empêche la fermeture si on clique dans le menu
+  paramMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
+
+  // Gère la déconnexion
+  deconnexionLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    sessionStorage.removeItem("connected");
+    window.location.href = "connexion.html";
+  });
+</script>
+
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
+    <footer>
+        <p>&copy; 2025 Monde Canin - Tous droits réservés</p>
+    </footer>
+</body>

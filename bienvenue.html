@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenue</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+.welcome-container {
+  background-image: url('images/bienvenue.jpg'); /* Remplace par ton image */
+  background-size: cover;          /* S'adapte à toute la zone */
+  background-position: center;     /* Centré */
+  background-repeat: no-repeat;    /* Pas de répétition */
+  height: 100vh;                   /* Hauteur = 100% de l’écran */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+
+    .welcome-container h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .welcome-container a {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .welcome-container a:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="welcome-container">
+    <h1>Bienvenue dans l'Univers Canin</h1>
+    <a href="accueil.html">Entrer</a>
+  </div>
+
+</body>
+</html>

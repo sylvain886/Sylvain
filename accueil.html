@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil - Monde Canin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <img src="Images/dd6823d4-6b3b-463d-9b35-f7f3df9ba9bb.jfif" alt="Logo du site" class="logo">
+</header>
+<!-- BOUTON PARAMÈTRE -->
+<div class="param-container">
+  <button id="param-button">⚙️ </button>
+    <ul id="param-menu" class="param-menu hidden">
+    <li><a href="accueil.html">🏠 Accueil</a></li>
+    <li><a href="races.html">🐶 Races</a></li>
+    <li><a href="alimentation.html">🍽️ Alimentation</a></li>
+    <li><a href="chat.html">💬 Chat</a></li>
+    <li><a href="contact.html">📞 Contact</a></li>
+    <li><a href="#" id="deconnexion-link">🚪 Déconnexion</a></li>
+  </ul>
+</div>
+  </div>
+</header>
+
+
+    <main>
+        <section>
+            <h2>Un monde dédié à nos fidèles amis à quatre pattes.</h2>
+            <p>Découvrez tout sur les chiens : races, conseils sur alimentation, soins et plus encore.</p>
+            <img src="Images/Les amis de Tao.jfif" alt="Chien joyeux">
+            <p>Passionné par le monde canin, j'ai créé ce site pour partager mon amour et ma connaissance des chiens avec tous les amoureux des animaux. <br>
+                Les chiens ne sont pas seulement des compagnons, ils sont aussi des membres précieux de nos familles. <br>
+                Mon objectif est de créer une plateforme où les propriétaires de chiens peuvent trouver des informations utiles, des conseils pratiques et des ressources pour améliorer le bien-être de leur fidèle ami.</p>
+        </section>
+    </main>
+<script>
+  const paramButton = document.getElementById("param-button");
+  const paramMenu = document.getElementById("param-menu");
+  const deconnexionLink = document.getElementById("deconnexion-link");
+
+  // Affiche ou cache le menu quand on clique sur le bouton
+  paramButton.addEventListener("click", function (e) {
+    e.stopPropagation();
+    paramMenu.classList.toggle("hidden");
+    if (paramMenu.classList.contains("hidden")) {
+      paramMenu.style.display = "none";
+    } else {
+      paramMenu.style.display = "block";
+    }
+  });
+
+  // Ferme le menu si on clique en dehors
+  window.addEventListener("click", function () {
+    paramMenu.classList.add("hidden");
+    paramMenu.style.display = "none";
+  });
+
+  // Empêche la fermeture si on clique dans le menu
+  paramMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
+
+  // Gère la déconnexion
+  deconnexionLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    sessionStorage.removeItem("connected");
+    window.location.href = "connexion.html";
+  });
+</script>
+
+
+    <footer>
+        <p>&copy; 2025 Monde Canin - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

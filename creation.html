@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Créer un compte</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="creation-body">
+
+  <div class="creation-container">
+    <h2>Créer un compte</h2>
+    <form id="formulaireCreation" onsubmit="return creerCompte(event)">
+      <input type="text" id="nom" placeholder="Nom" required><br>
+      <input type="text" id="prenom" placeholder="Prénom" required><br>
+      <input type="tel" id="telephone" placeholder="Numéro de téléphone" required><br>
+      <input type="email" id="email" placeholder="Email" required><br>
+      <input type="password" id="motdepasse" placeholder="Mot de passe" required><br>
+      <button type="submit">Créer un compte</button>
+    </form>
+    <p><a href="index.html">Retour à la connexion</a></p>
+  </div>
+
+  <script src="creation.js"></script>
+</body>
+</html>
